@@ -4,12 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.tencent.modebuilder.R;
 import com.tencent.modebuilder.presenter.ModelHandlePresenter;
 import com.tencent.modebuilder.util.MMkvUtil;

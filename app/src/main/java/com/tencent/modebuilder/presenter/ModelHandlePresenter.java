@@ -1,5 +1,6 @@
 package com.tencent.modebuilder.presenter;
 
+import android.content.Context;
 import android.widget.TextView;
 import com.google.gson.Gson;
 import com.tencent.modebuilder.MyApplication;
@@ -25,6 +26,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
     private String[] suffixStrArray;
     //主干
     private String[] contentStrArray;
+    private Context mContent;
 
     private static int jsonLength = 250000;
 
@@ -32,6 +34,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
         this.prefixStrArray = prefixStrArray;
         this.suffixStrArray = suffixStrArray;
         this.contentStrArray = contentStrArray;
+        mContent = MyApplication.application;
     }
 
     @Override
@@ -48,7 +51,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                     List<GenerateDataBean.EntitiesBean> mEntitiesBeanList = new ArrayList<>();
                     GenerateDataBean.EntitiesBean entitiesBean = new GenerateDataBean.EntitiesBean();
                     entitiesBean.setId(position);
-                    entitiesBean.setLabel("核心问法");
+                    entitiesBean.setLabel(mContent.getString(R.string.core_question));
                     entitiesBean.setStart_offset(prefixStrArray[i].length());
                     entitiesBean.setEnd_offset(sb.length());
                     mEntitiesBeanList.add(entitiesBean);
@@ -70,8 +73,8 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
         if (json.length() < jsonLength) {
             textView.setText(json);
         } else {
-            textView.setText(MyApplication.application.getString(R.string.data_is_bigger_already_change_file)
-                    + fileName + "\n" + MyApplication.application.getString(R.string.tip));
+            textView.setText(mContent.getString(R.string.data_is_bigger_already_change_file)
+                    + fileName + "\n" + mContent.getString(R.string.tip));
         }
     }
 
@@ -90,7 +93,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                         List<GenerateDataBean.EntitiesBean> mEntitiesBeanList = new ArrayList<>();
                         GenerateDataBean.EntitiesBean entitiesBean = new GenerateDataBean.EntitiesBean();
                         entitiesBean.setId(position);
-                        entitiesBean.setLabel("核心问法");
+                        entitiesBean.setLabel(mContent.getString(R.string.core_question));
                         entitiesBean.setStart_offset(prefixStrArray[i].length());
                         entitiesBean.setEnd_offset(sb.length() - suffixStrArray[k].length());
                         mEntitiesBeanList.add(entitiesBean);
@@ -113,8 +116,8 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
         if (json.length() < jsonLength) {
             textView.setText(json);
         } else {
-            textView.setText(MyApplication.application.getString(R.string.data_is_bigger_already_change_file)
-                    + fileName + "\n" + MyApplication.application.getString(R.string.tip));
+            textView.setText(mContent.getString(R.string.data_is_bigger_already_change_file)
+                    + fileName + "\n" + mContent.getString(R.string.tip));
         }
     }
 
@@ -133,7 +136,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                         List<GenerateDataBean.EntitiesBean> mEntitiesBeanList = new ArrayList<>();
                         GenerateDataBean.EntitiesBean entitiesBean = new GenerateDataBean.EntitiesBean();
                         entitiesBean.setId(position);
-                        entitiesBean.setLabel("核心问法");
+                        entitiesBean.setLabel(mContent.getString(R.string.core_question));
                         entitiesBean.setStart_offset(prefixStrArray[i].length());
                         entitiesBean.setEnd_offset(sb.length() - suffixStrArray[k].length() * 2);
                         mEntitiesBeanList.add(entitiesBean);
@@ -156,8 +159,8 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
         if (json.length() < jsonLength) {
             textView.setText(json);
         } else {
-            textView.setText(MyApplication.application.getString(R.string.data_is_bigger_already_change_file)
-                    + fileName + "\n" + MyApplication.application.getString(R.string.tip));
+            textView.setText(mContent.getString(R.string.data_is_bigger_already_change_file)
+                    + fileName + "\n" + mContent.getString(R.string.tip));
         }
     }
 
@@ -174,7 +177,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                 List<GenerateDataBean.EntitiesBean> mEntitiesBeanList = new ArrayList<>();
                 GenerateDataBean.EntitiesBean entitiesBean = new GenerateDataBean.EntitiesBean();
                 entitiesBean.setId(position);
-                entitiesBean.setLabel("核心问法");
+                entitiesBean.setLabel(mContent.getString(R.string.core_question));
                 entitiesBean.setStart_offset(0);
                 entitiesBean.setEnd_offset(sb.length());
                 mEntitiesBeanList.add(entitiesBean);
@@ -196,8 +199,8 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
         if (json.length() < jsonLength) {
             textView.setText(json);
         } else {
-            textView.setText(MyApplication.application.getString(R.string.data_is_bigger_already_change_file)
-                    + fileName + "\n" + MyApplication.application.getString(R.string.tip));
+            textView.setText(mContent.getString(R.string.data_is_bigger_already_change_file)
+                    + fileName + "\n" + mContent.getString(R.string.tip));
         }
     }
 
@@ -215,7 +218,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                     List<GenerateDataBean.EntitiesBean> mEntitiesBeanList = new ArrayList<>();
                     GenerateDataBean.EntitiesBean entitiesBean = new GenerateDataBean.EntitiesBean();
                     entitiesBean.setId(position);
-                    entitiesBean.setLabel("核心问法");
+                    entitiesBean.setLabel(mContent.getString(R.string.core_question));
                     entitiesBean.setStart_offset(0);
                     entitiesBean.setEnd_offset(sb.length() - prefixStrArray[i].length());
                     mEntitiesBeanList.add(entitiesBean);
@@ -237,8 +240,8 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
         if (json.length() < jsonLength) {
             textView.setText(json);
         } else {
-            textView.setText(MyApplication.application.getString(R.string.data_is_bigger_already_change_file)
-                    + fileName + "\n" + MyApplication.application.getString(R.string.tip));
+            textView.setText(mContent.getString(R.string.data_is_bigger_already_change_file)
+                    + fileName + "\n" + mContent.getString(R.string.tip));
         }
     }
 
@@ -256,7 +259,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                     List<GenerateDataBean.EntitiesBean> mEntitiesBeanList = new ArrayList<>();
                     GenerateDataBean.EntitiesBean entitiesBean = new GenerateDataBean.EntitiesBean();
                     entitiesBean.setId(position);
-                    entitiesBean.setLabel("核心问法");
+                    entitiesBean.setLabel(mContent.getString(R.string.core_question));
                     entitiesBean.setStart_offset(0);
                     entitiesBean.setEnd_offset(sb.length() - suffixStrArray[i].length());
                     mEntitiesBeanList.add(entitiesBean);
@@ -278,8 +281,8 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
         if (json.length() < jsonLength) {
             textView.setText(json);
         } else {
-            textView.setText(MyApplication.application.getString(R.string.data_is_bigger_already_change_file)
-                    + fileName + "\n" + MyApplication.application.getString(R.string.tip));
+            textView.setText(mContent.getString(R.string.data_is_bigger_already_change_file)
+                    + fileName + "\n" + mContent.getString(R.string.tip));
         }
     }
 
@@ -298,7 +301,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                         List<GenerateDataBean.EntitiesBean> mEntitiesBeanList = new ArrayList<>();
                         GenerateDataBean.EntitiesBean entitiesBean = new GenerateDataBean.EntitiesBean();
                         entitiesBean.setId(position);
-                        entitiesBean.setLabel("核心问法");
+                        entitiesBean.setLabel(mContent.getString(R.string.core_question));
                         entitiesBean.setStart_offset(0);
                         entitiesBean.setEnd_offset(sb.length() - suffixStrArray[j].length() - suffixStrArray[k].length());
                         mEntitiesBeanList.add(entitiesBean);
@@ -321,8 +324,8 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
         if (json.length() < jsonLength) {
             textView.setText(json);
         } else {
-            textView.setText(MyApplication.application.getString(R.string.data_is_bigger_already_change_file)
-                    + fileName + "\n" + MyApplication.application.getString(R.string.tip));
+            textView.setText(mContent.getString(R.string.data_is_bigger_already_change_file)
+                    + fileName + "\n" + mContent.getString(R.string.tip));
         }
     }
 
@@ -340,7 +343,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                     List<GenerateDataBean.EntitiesBean> mEntitiesBeanList = new ArrayList<>();
                     GenerateDataBean.EntitiesBean entitiesBean = new GenerateDataBean.EntitiesBean();
                     entitiesBean.setId(position);
-                    entitiesBean.setLabel("核心问法");
+                    entitiesBean.setLabel(mContent.getString(R.string.core_question));
                     entitiesBean.setStart_offset(suffixStrArray[i].length());
                     entitiesBean.setEnd_offset(sb.length());
                     mEntitiesBeanList.add(entitiesBean);
@@ -362,8 +365,8 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
         if (json.length() < jsonLength) {
             textView.setText(json);
         } else {
-            textView.setText(MyApplication.application.getString(R.string.data_is_bigger_already_change_file)
-                    + fileName + "\n" + MyApplication.application.getString(R.string.tip));
+            textView.setText(mContent.getString(R.string.data_is_bigger_already_change_file)
+                    + fileName + "\n" + mContent.getString(R.string.tip));
         }
     }
 
@@ -382,7 +385,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                         List<GenerateDataBean.EntitiesBean> mEntitiesBeanList = new ArrayList<>();
                         GenerateDataBean.EntitiesBean entitiesBean = new GenerateDataBean.EntitiesBean();
                         entitiesBean.setId(position);
-                        entitiesBean.setLabel("核心问法");
+                        entitiesBean.setLabel(mContent.getString(R.string.core_question));
                         entitiesBean.setStart_offset(suffixStrArray[k].length());
                         entitiesBean.setEnd_offset(sb.length() - prefixStrArray[i].length());
                         mEntitiesBeanList.add(entitiesBean);
@@ -405,8 +408,8 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
         if (json.length() < jsonLength) {
             textView.setText(json);
         } else {
-            textView.setText(MyApplication.application.getString(R.string.data_is_bigger_already_change_file)
-                    + fileName + "\n" + MyApplication.application.getString(R.string.tip));
+            textView.setText(mContent.getString(R.string.data_is_bigger_already_change_file)
+                    + fileName + "\n" + mContent.getString(R.string.tip));
         }
     }
 
@@ -425,7 +428,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                         List<GenerateDataBean.EntitiesBean> mEntitiesBeanList = new ArrayList<>();
                         GenerateDataBean.EntitiesBean entitiesBean = new GenerateDataBean.EntitiesBean();
                         entitiesBean.setId(position);
-                        entitiesBean.setLabel("核心问法");
+                        entitiesBean.setLabel(mContent.getString(R.string.core_question));
                         entitiesBean.setStart_offset(suffixStrArray[i].length());
                         entitiesBean.setEnd_offset(sb.length() - suffixStrArray[k].length());
                         mEntitiesBeanList.add(entitiesBean);
@@ -448,8 +451,8 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
         if (json.length() < jsonLength) {
             textView.setText(json);
         } else {
-            textView.setText(MyApplication.application.getString(R.string.data_is_bigger_already_change_file)
-                    + fileName + "\n" + MyApplication.application.getString(R.string.tip));
+            textView.setText(mContent.getString(R.string.data_is_bigger_already_change_file)
+                    + fileName + "\n" + mContent.getString(R.string.tip));
         }
     }
 
@@ -468,7 +471,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                         List<GenerateDataBean.EntitiesBean> mEntitiesBeanList = new ArrayList<>();
                         GenerateDataBean.EntitiesBean entitiesBean = new GenerateDataBean.EntitiesBean();
                         entitiesBean.setId(position);
-                        entitiesBean.setLabel("核心问法");
+                        entitiesBean.setLabel(mContent.getString(R.string.core_question));
                         entitiesBean.setStart_offset(suffixStrArray[i].length());
                         entitiesBean.setEnd_offset(sb.length() - suffixStrArray[k].length() * 2);
                         mEntitiesBeanList.add(entitiesBean);
@@ -491,8 +494,8 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
         if (json.length() < jsonLength) {
             textView.setText(json);
         } else {
-            textView.setText(MyApplication.application.getString(R.string.data_is_bigger_already_change_file)
-                    + fileName + "\n" + MyApplication.application.getString(R.string.tip));
+            textView.setText(mContent.getString(R.string.data_is_bigger_already_change_file)
+                    + fileName + "\n" + mContent.getString(R.string.tip));
         }
     }
 }
