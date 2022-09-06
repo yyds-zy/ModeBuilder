@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">模型生成器</string>
+    <string name="mode_choose">选择模型</string>
+    <string name="data_is_bigger_already_change_file">数据过大无法渲染,已生成文件\n
+        文件路径：/storage/emulated/0/Android/data/com.tencent.modebuilder/files/ModeFile/
+    </string>
+    <string name="tip">请执行adb pull 文件路径 -> 导出文件</string>
+    <string name="mode_setting">模型配置</string>
+    <string name="data_format_error">数据格式错误</string>
+    <string name="prefix">前缀</string>
+    <string name="suffix">后缀</string>
+    <string name="content">主干</string>
+    <string name="save">保存</string>
+    <string name="save_failed">保存失败，请检查数据状态</string>
+    <string name="save_failed_format">保存失败，请检查数据格式</string>
+    <string name="data_format_explain">模型示例</string>
+
+    <string name="fix_mode">修改模型配置</string>
+</resources>

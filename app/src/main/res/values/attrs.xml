@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PageActionBar">
+        <attr name="left_text_title" format="string" />
+        <attr name="right_text_title" format="string" />
+        <attr name="left_image_width" format="dimension" />
+        <attr name="left_image_height" format="dimension" />
+        <attr name="center_text_title" format="string" />
+        <attr name="center_text_color" format="color" />
+        <attr name="center_text_size" format="dimension" />
+
+    </declare-styleable>
+</resources>
