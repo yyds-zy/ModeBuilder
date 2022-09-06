@@ -7,13 +7,34 @@
     <string name="tip">请执行adb pull 文件路径 -> 导出文件</string>
     <string name="mode_setting">模型配置</string>
     <string name="data_format_error">数据格式错误</string>
-    <string name="prefix">前缀</string>
-    <string name="suffix">后缀</string>
-    <string name="content">主干</string>
-    <string name="save">保存</string>
-    <string name="save_failed">保存失败，请检查数据状态</string>
+    <string name="prefix">示例：{"你好小微", "小微", "小微小微", "嗨小微", "你好小薇", "小薇", "小薇小薇", "嗨小薇"}</string>
+    <string name="suffix">示例：{"阿", "啊", "啦", "唉", "哎", "呢", "吧",
+                           "罢", "呵", "哈", "了", "哇", "呀", "吖",
+                           "吗", "嘛", "哪", "哦", "噢", "喔", "哈",
+                           "呐", "哩", "咧", "哟", "嘞", "耶", "噻",
+                           "呗", "咯", "啰", "喽", "呕", "呦", "么",
+                           "麽", "嗯", "啵", "呃", "来", "唻", "不",
+                           "的"}</string>
+    <string name="content">示例：{"黑洞是什么","烦恼的英文","李小龙是谁","马华腾是谁",
+                      "任正非是谁","彭德文是谁","刘强东是谁","美国的上任总统",
+                      "五角大楼在哪里","中国海拔最高的城市","中国最高的山脉","罗凯楠是谁",
+                      "郑光祖的代表作品","黄河的发源地","杰克船长的饰演者是谁","宋亚轩是谁",
+                      "爱因斯坦是谁","美国总统是谁","上海的经纬度","日本的国歌",
+                      "中国的国家主席是谁","习近平的生日","欧阳娜娜是谁","我国最大的瀑布",
+                      "五岳是什么","菲尔普斯是谁","王守义是谁","袁隆平是谁",
+                      "中国第二大瀑布","袁咏琳是谁","最长的河流","花泽香菜是谁",
+                      "金城武是谁","杨幂的资料","南京艺术学院的官网","科尔沁夫的话",
+                      "李小璐是谁","贾乃亮是谁","安吉丽娜是谁","美国自由女神像是谁",
+                      "李白的古诗","四大名著的作者","人民币美元汇率","白宇是谁",
+                      "郭麒麟是谁","西红市首富","哈尔滨工业大学","谁是萨特",
+                      "刀马旦是什么","满文军的代表作"}</string>
+    <string name="save">确定</string>
+    <string name="save_failed">设置失败，请检查数据状态</string>
     <string name="save_failed_format">保存失败，请检查数据格式</string>
+    <string name="save_success">设置成功</string>
     <string name="data_format_explain">模型示例</string>
 
     <string name="fix_mode">修改模型配置</string>
+
+    <string name="clear_data">一键清空</string>
 </resources>

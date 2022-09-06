@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +24,7 @@ public class SettingActivity extends AppCompatActivity {
     private EditText mEditPrefix;
     private EditText mEditContent;
     private EditText mEditSuffix;
-    private TextView mShowTv;
+    private RelativeLayout mShowRL,mClearRL;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,13 +46,13 @@ public class SettingActivity extends AppCompatActivity {
         mEditPrefix = findViewById(R.id.ed_prefix);
         mEditContent = findViewById(R.id.ed_content);
         mEditSuffix = findViewById(R.id.ed_suffix);
-        mShowTv = findViewById(R.id.tv_data_format_explain);
-
-        String prefix = mEditPrefix.getText().toString().trim();
-        String content = mEditContent.getText().toString().trim();
-        String suffix = mEditSuffix.getText().toString().trim();
+        mShowRL = findViewById(R.id.rl_data_format_explain);
+        mClearRL = findViewById(R.id.rl_clear);
 
         mSaveTv.setOnClickListener(view -> {
+            String prefix = mEditPrefix.getText().toString().trim();
+            String content = mEditContent.getText().toString().trim();
+            String suffix = mEditSuffix.getText().toString().trim();
             if (TextUtils.isEmpty(prefix) || TextUtils.isEmpty(content) || TextUtils.isEmpty(suffix)) {
                 Toast.makeText(this,getString(R.string.save_failed),Toast.LENGTH_SHORT).show();
             } else {
@@ -62,14 +63,20 @@ public class SettingActivity extends AppCompatActivity {
                     MMkvUtil.getInstance().EncodeStringValue(MMkvUtil.PREFIX, MMkvUtil.KEY_PREFIX, prefix);
                     MMkvUtil.getInstance().EncodeStringValue(MMkvUtil.SUFFIX, MMkvUtil.KEY_SUFFIX, suffix);
                     MMkvUtil.getInstance().EncodeStringValue(MMkvUtil.CONTENT, MMkvUtil.KEY_CONTENT, content);
+                    Toast.makeText(this,getString(R.string.save_success),Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this,getString(R.string.save_failed_format),Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        mShowTv.setOnClickListener(view -> {
+        mShowRL.setOnClickListener(view -> {
            ImageActivity.start(this);
+        });
+        mClearRL.setOnClickListener(view -> {
+            mEditPrefix.setText("");
+            mEditContent.setText("");
+            mEditSuffix.setText("");
         });
     }
 }

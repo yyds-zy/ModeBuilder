@@ -2,84 +2,118 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
-    <com.tencent.modebuilder.view.PageActionBar
-        android:id="@+id/page_action_bar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center_vertical"
-        app:center_text_title="@string/mode_setting" />
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/clear_data"
+                android:textColor="@color/red"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:letterSpacing="0.058"
+            android:text="@string/mode_setting"
+            android:textColor="#333333"
+            android:textSize="17sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_data_format_explain"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:paddingRight="20dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/data_format_explain"
+                android:textColor="@color/red"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
 
     <LinearLayout
-        android:layout_weight="1"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/ed_prefix"
-            android:layout_weight="1"
-            android:hint="@string/prefix"
-            android:focusable="false"
-            android:layout_margin="5dp"
-            android:background="@drawable/bg_text_shape"
-            android:focusableInTouchMode="false"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/bg_text_shape"
+            android:hint="@string/prefix" />
 
         <EditText
             android:id="@+id/ed_content"
-            android:layout_weight="1"
-            android:hint="@string/content"
-            android:focusable="false"
-            android:layout_margin="5dp"
-            android:background="@drawable/bg_text_shape"
-            android:focusableInTouchMode="false"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/bg_text_shape"
+            android:hint="@string/content" />
 
         <EditText
             android:id="@+id/ed_suffix"
-            android:layout_weight="1"
-            android:hint="@string/suffix"
-            android:focusable="false"
-            android:layout_margin="5dp"
-            android:background="@drawable/bg_text_shape"
-            android:focusableInTouchMode="false"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/bg_text_shape"
+            android:hint="@string/suffix" />
     </LinearLayout>
 
     <RelativeLayout
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true">
 
         <TextView
             android:id="@+id/tv_save_mode"
-            android:text="@string/save"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:background="@drawable/bg_sure_selector"
             android:layout_width="200dp"
             android:layout_height="60dp"
-            android:layout_centerInParent="true"/>
-
-        <TextView
-            android:id="@+id/tv_data_format_explain"
-            android:text="@string/data_format_explain"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:padding="5dp"
-            android:textStyle="bold"
-            android:textColor="@color/red"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_sure_selector"
+            android:gravity="center"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 

@@ -84,6 +84,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String prefix = MMkvUtil.getInstance().DecodeStringValue(MMkvUtil.PREFIX, MMkvUtil.KEY_PREFIX);
+        prefixStrArray = StringUtil.getStringArray(prefix);
+        String suffix = MMkvUtil.getInstance().DecodeStringValue(MMkvUtil.SUFFIX, MMkvUtil.KEY_SUFFIX);
+        suffixStrArray = StringUtil.getStringArray(suffix);
+        String content = MMkvUtil.getInstance().DecodeStringValue(MMkvUtil.CONTENT, MMkvUtil.KEY_CONTENT);
+        contentStrArray = StringUtil.getStringArray(content);
+        if (prefixStrArray == null || suffixStrArray == null || contentStrArray == null) {
+            Toast.makeText(this,getString(R.string.data_format_error),Toast.LENGTH_SHORT).show();
+        } else {
+            presenter = new ModelHandlePresenter(prefixStrArray,suffixStrArray,contentStrArray);
+        }
+    }
+
     private void switchMode(String mode) {
         if (presenter == null) return;
         switch (mode) {
