@@ -1,8 +1,11 @@
 package com.tencent.modebuilder.model;
 
+import com.alibaba.fastjson.annotation.JSONType;
+
 import java.io.Serializable;
 import java.util.List;
 
+@JSONType(orders={"id","text","entities","relations"})
 public class GenerateDataBean implements Serializable {
 
 
@@ -52,6 +55,7 @@ public class GenerateDataBean implements Serializable {
         this.relations = relations;
     }
 
+    @JSONType(orders={"id","label","start_offset","end_offset"})
     public static class EntitiesBean implements Serializable {
         /**
          * id : 0

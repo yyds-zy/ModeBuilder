@@ -2,7 +2,8 @@ package com.tencent.modebuilder.presenter;
 
 import android.content.Context;
 import android.widget.TextView;
-import com.google.gson.Gson;
+
+import com.alibaba.fastjson.JSON;
 import com.tencent.modebuilder.MyApplication;
 import com.tencent.modebuilder.R;
 import com.tencent.modebuilder.contract.ModelContract;
@@ -66,8 +67,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                 }
             }
         }
-        Gson gson = new Gson();
-        String json = gson.toJson(mGenerateBeanList);
+        String json = JSON.toJSONString(mGenerateBeanList);
         String fileName = dateFormatFile.format(date) + "_AX.json";
         FileUtils.createJsonFile(json, "/" + fileName);
         if (json.length() < jsonLength) {
@@ -109,8 +109,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                 }
             }
         }
-        Gson gson = new Gson();
-        String json = gson.toJson(mGenerateBeanList);
+        String json = JSON.toJSONString(mGenerateBeanList);
         String fileName = dateFormatFile.format(date) + "_AXB.json";
         FileUtils.createJsonFile(json, "/" + fileName);
         if (json.length() < jsonLength) {
@@ -152,8 +151,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                 }
             }
         }
-        Gson gson = new Gson();
-        String json = gson.toJson(mGenerateBeanList);
+        String json = JSON.toJSONString(mGenerateBeanList);
         String fileName = dateFormatFile.format(date) + "_AXBB.json";
         FileUtils.createJsonFile(json, "/" + fileName);
         if (json.length() < jsonLength) {
@@ -192,8 +190,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
             }
         }
 
-        Gson gson = new Gson();
-        String json = gson.toJson(mGenerateBeanList);
+        String json = JSON.toJSONString(mGenerateBeanList);
         String fileName = dateFormatFile.format(date) + "_X.json";
         FileUtils.createJsonFile(json, "/" + fileName);
         if (json.length() < jsonLength) {
@@ -233,8 +230,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                 }
             }
         }
-        Gson gson = new Gson();
-        String json = gson.toJson(mGenerateBeanList);
+        String json = JSON.toJSONString(mGenerateBeanList);
         String fileName = dateFormatFile.format(date) + "_XA.json";
         FileUtils.createJsonFile(json, "/" + fileName);
         if (json.length() < jsonLength) {
@@ -274,8 +270,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                 }
             }
         }
-        Gson gson = new Gson();
-        String json = gson.toJson(mGenerateBeanList);
+        String json = JSON.toJSONString(mGenerateBeanList);
         String fileName = dateFormatFile.format(date) + "_XB.json";
         FileUtils.createJsonFile(json, "/" + fileName);
         if (json.length() < jsonLength) {
@@ -317,8 +312,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                 }
             }
         }
-        Gson gson = new Gson();
-        String json = gson.toJson(mGenerateBeanList);
+        String json = JSON.toJSONString(mGenerateBeanList);
         String fileName = dateFormatFile.format(date) + "_XBB.json";
         FileUtils.createJsonFile(json, "/" + fileName);
         if (json.length() < jsonLength) {
@@ -358,8 +352,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                 }
             }
         }
-        Gson gson = new Gson();
-        String json = gson.toJson(mGenerateBeanList);
+        String json = JSON.toJSONString(mGenerateBeanList);
         String fileName = dateFormatFile.format(date) + "_BX.json";
         FileUtils.createJsonFile(json, "/" + fileName);
         if (json.length() < jsonLength) {
@@ -401,8 +394,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                 }
             }
         }
-        Gson gson = new Gson();
-        String json = gson.toJson(mGenerateBeanList);
+        String json = JSON.toJSONString(mGenerateBeanList);
         String fileName = dateFormatFile.format(date) + "_BXA.json";
         FileUtils.createJsonFile(json, "/" + fileName);
         if (json.length() < jsonLength) {
@@ -444,8 +436,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                 }
             }
         }
-        Gson gson = new Gson();
-        String json = gson.toJson(mGenerateBeanList);
+        String json = JSON.toJSONString(mGenerateBeanList);
         String fileName = dateFormatFile.format(date) + "_BXB.json";
         FileUtils.createJsonFile(json, "/" + fileName);
         if (json.length() < jsonLength) {
@@ -487,8 +478,7 @@ public class ModelHandlePresenter implements ModelContract.OnHandleModelEventLis
                 }
             }
         }
-        Gson gson = new Gson();
-        String json = gson.toJson(mGenerateBeanList);
+        String json = JSON.toJSONString(mGenerateBeanList);
         String fileName = dateFormatFile.format(date) + "_BXBB.json";
         FileUtils.createJsonFile(json, "/" + fileName);
         if (json.length() < jsonLength) {
