@@ -37,4 +37,9 @@
     <string name="fix_mode">修改模型配置</string>
 
     <string name="clear_data">一键清空</string>
+
+    <string name="main_tip"> \n 导出文件说明 \n
+    第一步：打开命令窗口\n
+    第二步：执行adb pull /storage/emulated/0/Android/data/com.tencent.modebuilder/files/ModeFile/ \n
+    第三步：在当前目录查看导出文件</string>
 </resources>

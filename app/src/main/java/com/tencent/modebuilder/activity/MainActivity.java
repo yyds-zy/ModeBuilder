@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     ModelHandlePresenter presenter;
     private PageActionBar mPageActionBar;
     private AlertDialog dialog;
+    private TextView mTipTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,11 +73,18 @@ public class MainActivity extends AppCompatActivity {
         mPageActionBar.getBackRL().setVisibility(View.VISIBLE);
         mPageActionBar.getRightRL().setVisibility(View.VISIBLE);
         textView = findViewById(R.id.tv_generate_content);
+        mTipTv = findViewById(R.id.tv_main_tip);
         initDialog();
         mPageActionBar.getRightView().setOnClickListener(view -> {
+            if (mTipTv.getVisibility() == View.VISIBLE) {
+                mTipTv.setVisibility(View.GONE);
+            }
             switchMode(mPageActionBar.getLeftView().getText().toString());
         });
         mPageActionBar.getBackRL().setOnClickListener(view -> {
+            if (mTipTv.getVisibility() == View.GONE) {
+                mTipTv.setVisibility(View.VISIBLE);
+            }
             dialog.show();
         });
         mPageActionBar.getCenterView().setOnClickListener(view -> {

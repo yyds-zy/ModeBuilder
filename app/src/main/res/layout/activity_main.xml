@@ -14,6 +14,7 @@
         app:center_text_title="@string/fix_mode" />
 
     <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/page_action_bar"
@@ -36,4 +37,14 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_main_tip"
+        android:text="@string/main_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red"
+        android:layout_margin="5dp"
+        android:padding="20dp"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>
