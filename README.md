@@ -64,3 +64,9 @@
 - 方案二：电脑连接手机通过adb工具执行adb pull /storage/emulated/0/Android/data/com.tencent.modebuilder/files/ModeFile/
 
 #### 六、软件截图
+<center class="half">
+  <img src="https://user-images.githubusercontent.com/26237728/188782115-8dcfe980-2f6a-4a01-9ec8-52475a176eee.jpg" width = "200" height = "400" alt="1" />   <img src="https://user-images.githubusercontent.com/26237728/188782121-91e40d01-e88b-4b7a-bc0d-89f6ee1c6b5b.jpg" width = "200" height = "400" alt="2" />
+  <img src="https://user-images.githubusercontent.com/26237728/188782150-1fd9173f-04b8-40b9-b20b-af16feebac2f.jpg" width = "200" height = "400" alt="3" />
+  <img src="https://user-images.githubusercontent.com/26237728/188782164-103e765e-15ea-4d2f-a4d5-2468c687c087.jpg" width = "200" height = "400" alt="4" />
+  <img src="https://user-images.githubusercontent.com/26237728/188782179-87306805-1f10-4e97-89d3-1edb30392b08.jpg" width = "200" height = "400" alt="5" />
+</center>
