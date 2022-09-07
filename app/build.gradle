@@ -3,21 +3,21 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk config.android.compileSdk
 
     defaultConfig {
         applicationId "com.tencent.modebuilder"
-        minSdk 21
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        minSdk config.android.minSdk
+        targetSdk config.android.targetSdk
+        versionCode config.version.versionCode
+        versionName config.version.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled config.android.multiDexEnabled
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             android.applicationVariants.all { variant ->
                 variant.outputs.all {
@@ -27,8 +27,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility config.android.sourceCompatibility
+        targetCompatibility config.android.targetCompatibility
     }
 }
 
@@ -42,9 +42,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //mmkv
-    implementation 'com.tencent:mmkv-static:1.2.2'
+    implementation config.dependencies.mmkv
     //fastjson
-    implementation 'com.alibaba:fastjson:1.1.56.android'
+    implementation config.dependencies.fastjson
     //lottie
-    implementation 'com.airbnb.android:lottie:4.1.0'
+    implementation config.dependencies.lottie
 }
