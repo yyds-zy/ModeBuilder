@@ -1,6 +1,9 @@
 package com.tencent.modebuilder.activity;
 
 import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.view.View;
 import android.widget.TextView;
@@ -41,6 +44,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void init(){
+        ClipboardManager cm =(ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
         String prefix = MMkvUtil.getInstance().DecodeStringValue(MMkvUtil.PREFIX, MMkvUtil.KEY_PREFIX);
         prefixStrArray = StringUtil.getStringArray(prefix);
         String suffix = MMkvUtil.getInstance().DecodeStringValue(MMkvUtil.SUFFIX, MMkvUtil.KEY_SUFFIX);
@@ -72,6 +76,12 @@ public class MainActivity extends BaseActivity {
         });
         mPageActionBar.getCenterView().setOnClickListener(view -> {
             SettingActivity.start(this,SettingActivity.class);
+        });
+        textView.setOnLongClickListener(view -> {
+            ClipData clipData = ClipData.newPlainText(null,textView.getText());
+            cm.setPrimaryClip(clipData);
+            Toast.makeText(MainActivity.this,getString(R.string.copy_success),Toast.LENGTH_SHORT).show();
+            return true;
         });
     }
 

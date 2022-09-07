@@ -25,4 +25,5 @@
     第二步：执行adb pull /storage/emulated/0/Android/data/com.tencent.modebuilder/files/ModeFile/ \n
     第三步：在当前目录查看导出文件</string>
     <string name="core_question">核心问法</string>
+    <string name="copy_success">复制成功</string>
 </resources>
