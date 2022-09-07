@@ -14,8 +14,8 @@ ext.config = [
         ],
 
         dependencies       : [
-                mmkv: 'com.tencent:mmkv-static:1.2.2',
+                mmkv      : 'com.tencent:mmkv-static:1.2.2',
                 fastjson  : 'com.alibaba:fastjson:1.1.56.android',
-                lottie  : 'com.airbnb.android:lottie:4.1.0',
+                lottie    : 'com.airbnb.android:lottie:4.1.0',
         ]
 ]
