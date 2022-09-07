@@ -2,6 +2,10 @@ package com.tencent.modebuilder.contract;
 
 import android.widget.TextView;
 
+/**
+ * Created by 阿飞の小蝴蝶 on 2022/9/7
+ * Describe:模型种类接口
+ */
 public interface ModelContract {
 
     interface OnHandleModelEventListener {

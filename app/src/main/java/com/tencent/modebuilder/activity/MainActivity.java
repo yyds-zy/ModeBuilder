@@ -1,12 +1,11 @@
 package com.tencent.modebuilder.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.tencent.modebuilder.BaseActivity;
 import com.tencent.modebuilder.R;
 import com.tencent.modebuilder.presenter.ModelHandlePresenter;
 import com.tencent.modebuilder.util.MMkvUtil;
@@ -14,9 +13,10 @@ import com.tencent.modebuilder.util.StringUtil;
 import com.tencent.modebuilder.view.PageActionBar;
 
 /**
- * 模型数据生成器
+ * Created by 阿飞の小蝴蝶 on 2022/9/7
+ * Describe:模型数据生成器首页
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     //前缀
     private String[] prefixStrArray;
@@ -33,28 +33,14 @@ public class MainActivity extends AppCompatActivity {
     private AlertDialog dialog;
     private TextView mTipTv;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        init();
+    public int getLayoutById() {
+        return R.layout.activity_main;
     }
 
-    private void initDialog(){
-        dialog = new AlertDialog.Builder(this)
-                .setIcon(R.mipmap.ic_launcher)
-                .setTitle(getString(R.string.mode_choose))
-                .setSingleChoiceItems(modelSortArray, 0, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        textView.setText("");
-                        mPageActionBar.setLeftTitle(modelSortArray[which]);
-                    }
-                }).create();
-    }
-
-    private void init(){
+    @Override
+    protected void init(){
         String prefix = MMkvUtil.getInstance().DecodeStringValue(MMkvUtil.PREFIX, MMkvUtil.KEY_PREFIX);
         prefixStrArray = StringUtil.getStringArray(prefix);
         String suffix = MMkvUtil.getInstance().DecodeStringValue(MMkvUtil.SUFFIX, MMkvUtil.KEY_SUFFIX);
@@ -85,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             dialog.show();
         });
         mPageActionBar.getCenterView().setOnClickListener(view -> {
-            SettingActivity.start(this);
+            SettingActivity.start(this,SettingActivity.class);
         });
     }
 
@@ -144,5 +130,19 @@ public class MainActivity extends AppCompatActivity {
             default:
                 break;
         }
+    }
+
+    private void initDialog(){
+        dialog = new AlertDialog.Builder(this)
+                .setIcon(R.mipmap.ic_launcher)
+                .setTitle(getString(R.string.mode_choose))
+                .setSingleChoiceItems(modelSortArray, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        textView.setText("");
+                        mPageActionBar.setLeftTitle(modelSortArray[which]);
+                    }
+                }).create();
     }
 }

@@ -5,6 +5,10 @@ import android.content.Context;
 
 import com.tencent.mmkv.MMKV;
 
+/**
+ * Created by 阿飞の小蝴蝶 on 2022/9/7
+ * Describe:
+ */
 public class MMkvUtil {
     private static final String TAG = "MMkvUtil";
 

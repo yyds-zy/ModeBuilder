@@ -5,6 +5,10 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by 阿飞の小蝴蝶 on 2022/9/7
+ * Describe:
+ */
 public class StringUtil {
 
     public static final String TAG = "StringUtil";

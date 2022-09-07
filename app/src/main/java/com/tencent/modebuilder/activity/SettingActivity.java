@@ -1,24 +1,20 @@
 package com.tencent.modebuilder.activity;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.tencent.modebuilder.BaseActivity;
 import com.tencent.modebuilder.R;
 import com.tencent.modebuilder.util.MMkvUtil;
 import com.tencent.modebuilder.util.StringUtil;
 
-public class SettingActivity extends AppCompatActivity {
+/**
+ * Created by 阿飞の小蝴蝶 on 2022/9/7
+ * Describe:模型数据生成器设置页
+ */
+public class SettingActivity extends BaseActivity {
 
     private TextView mSaveTv;
     private EditText mEditPrefix;
@@ -27,21 +23,12 @@ public class SettingActivity extends AppCompatActivity {
     private RelativeLayout mShowRL,mClearRL;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
-        init();
+    public int getLayoutById() {
+        return R.layout.activity_setting;
     }
 
-    public static void start(Context context) {
-        Intent intent = new Intent(context, SettingActivity.class);
-        if (!(context instanceof Activity)) {
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        }
-        context.startActivity(intent);
-    }
-
-    private void init(){
+    @Override
+    protected void init(){
         mSaveTv = findViewById(R.id.tv_save_mode);
         mEditPrefix = findViewById(R.id.ed_prefix);
         mEditContent = findViewById(R.id.ed_content);
@@ -71,7 +58,7 @@ public class SettingActivity extends AppCompatActivity {
         });
 
         mShowRL.setOnClickListener(view -> {
-           ImageActivity.start(this);
+           ImageActivity.start(this,ImageActivity.class);
         });
         mClearRL.setOnClickListener(view -> {
             mEditPrefix.setText("");

@@ -1,35 +1,23 @@
 package com.tencent.modebuilder.activity;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.widget.ImageView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.tencent.modebuilder.BaseActivity;
 import com.tencent.modebuilder.R;
 
-public class ImageActivity extends AppCompatActivity {
+/**
+ * Created by 阿飞の小蝴蝶 on 2022/9/7
+ * Describe:模型数据生成器数据说明页
+ */
+public class ImageActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image);
-        init();
+    public int getLayoutById() {
+        return R.layout.activity_image;
     }
 
-    public static void start(Context context) {
-        Intent intent = new Intent(context, ImageActivity.class);
-        if (!(context instanceof Activity)) {
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        }
-        context.startActivity(intent);
-    }
-
-
-    private void init() {
+    @Override
+    protected void init() {
         ImageView imageView = findViewById(R.id.image_show);
         imageView.setImageDrawable(getDrawable(R.drawable.data_format_explain));
     }

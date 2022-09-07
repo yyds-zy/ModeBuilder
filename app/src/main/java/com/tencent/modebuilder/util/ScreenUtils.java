@@ -6,6 +6,10 @@ import android.util.TypedValue;
 
 import com.tencent.modebuilder.MyApplication;
 
+/**
+ * Created by 阿飞の小蝴蝶 on 2022/9/7
+ * Describe:
+ */
 public class ScreenUtils {
     /**
      * 获取屏幕高度(px)

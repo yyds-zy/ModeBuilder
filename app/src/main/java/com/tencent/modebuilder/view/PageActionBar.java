@@ -13,6 +13,10 @@ import android.widget.TextView;
 import com.tencent.modebuilder.R;
 import com.tencent.modebuilder.util.ScreenUtils;
 
+/**
+ * Created by 阿飞の小蝴蝶 on 2022/9/7
+ * Describe:
+ */
 public class PageActionBar extends RelativeLayout {
     private Context mContext;
     RelativeLayout mRootView;

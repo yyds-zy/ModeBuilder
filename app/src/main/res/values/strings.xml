@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">模型生成器</string>
+    <string name="app_name">模型数据生成器</string>
     <string name="mode_choose">选择模型</string>
     <string name="data_is_bigger_already_change_file">数据过大无法渲染,已生成文件\n
         文件路径：/storage/emulated/0/Android/data/com.tencent.modebuilder/files/ModeFile/

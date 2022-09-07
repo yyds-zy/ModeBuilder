@@ -15,6 +15,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Created by 阿飞の小蝴蝶 on 2022/9/7
+ * Describe:模型数据处理
+ */
 public class ModelHandlePresenter implements ModelContract.OnHandleModelEventListener {
 
     public static final String TAG = "ModelHandlePresenter";
