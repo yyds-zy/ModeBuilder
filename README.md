@@ -2,7 +2,7 @@
 
 ### 主要是为了方便对提供的前缀、后缀、主干数据进行所有可能性组合，且标注出主干数据在整体语句中的头尾索引，生成对应的json数据模型。[点击下载 Apk 体验](https://github.com/yyds-zy/ModeBuilder/blob/master/app/debug/ModeBuilder.apk)，又或者扫码下载
 
-![](picture/demo_code.png)
+![](picture/activity/demo_code.png)
 
 #### 一、安装模型数据生成器后存在默认的模型配置：
 
