@@ -165,5 +165,6 @@ public class MainActivity extends BaseActivity {
             return;
         }
         moveTaskToBack(false);
+        finish();
     }
 }
