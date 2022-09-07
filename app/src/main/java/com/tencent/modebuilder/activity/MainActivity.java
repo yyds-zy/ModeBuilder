@@ -11,8 +11,10 @@ import android.widget.Toast;
 import com.tencent.modebuilder.BaseActivity;
 import com.tencent.modebuilder.R;
 import com.tencent.modebuilder.presenter.ModelHandlePresenter;
+import com.tencent.modebuilder.util.DoubleClickHelper;
 import com.tencent.modebuilder.util.MMkvUtil;
 import com.tencent.modebuilder.util.StringUtil;
+import com.tencent.modebuilder.util.ToastUtils;
 import com.tencent.modebuilder.view.PageActionBar;
 
 /**
@@ -52,7 +54,7 @@ public class MainActivity extends BaseActivity {
         String content = MMkvUtil.getInstance().DecodeStringValue(MMkvUtil.CONTENT, MMkvUtil.KEY_CONTENT);
         contentStrArray = StringUtil.getStringArray(content);
         if (prefixStrArray == null || suffixStrArray == null || contentStrArray == null) {
-            Toast.makeText(this,getString(R.string.data_format_error),Toast.LENGTH_SHORT).show();
+            ToastUtils.toast(R.string.data_format_error);
         } else {
             presenter = new ModelHandlePresenter(prefixStrArray,suffixStrArray,contentStrArray);
         }
@@ -80,7 +82,7 @@ public class MainActivity extends BaseActivity {
         textView.setOnLongClickListener(view -> {
             ClipData clipData = ClipData.newPlainText(null,textView.getText());
             cm.setPrimaryClip(clipData);
-            Toast.makeText(MainActivity.this,getString(R.string.copy_success),Toast.LENGTH_SHORT).show();
+            ToastUtils.toast(R.string.copy_success);
             return true;
         });
     }
@@ -95,7 +97,7 @@ public class MainActivity extends BaseActivity {
         String content = MMkvUtil.getInstance().DecodeStringValue(MMkvUtil.CONTENT, MMkvUtil.KEY_CONTENT);
         contentStrArray = StringUtil.getStringArray(content);
         if (prefixStrArray == null || suffixStrArray == null || contentStrArray == null) {
-            Toast.makeText(this,getString(R.string.data_format_error),Toast.LENGTH_SHORT).show();
+            ToastUtils.toast(R.string.data_format_error);
         } else {
             presenter = new ModelHandlePresenter(prefixStrArray,suffixStrArray,contentStrArray);
         }
@@ -154,5 +156,14 @@ public class MainActivity extends BaseActivity {
                         mPageActionBar.setLeftTitle(modelSortArray[which]);
                     }
                 }).create();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (!DoubleClickHelper.isOnDoubleClick()) {
+            ToastUtils.toast(R.string.home_exit_hint);
+            return;
+        }
+        moveTaskToBack(false);
     }
 }

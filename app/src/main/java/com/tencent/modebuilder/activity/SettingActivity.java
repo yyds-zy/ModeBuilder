@@ -9,6 +9,7 @@ import com.tencent.modebuilder.BaseActivity;
 import com.tencent.modebuilder.R;
 import com.tencent.modebuilder.util.MMkvUtil;
 import com.tencent.modebuilder.util.StringUtil;
+import com.tencent.modebuilder.util.ToastUtils;
 
 /**
  * Created by 阿飞の小蝴蝶 on 2022/9/7
@@ -41,7 +42,7 @@ public class SettingActivity extends BaseActivity {
             String content = mEditContent.getText().toString().trim();
             String suffix = mEditSuffix.getText().toString().trim();
             if (TextUtils.isEmpty(prefix) || TextUtils.isEmpty(content) || TextUtils.isEmpty(suffix)) {
-                Toast.makeText(this,getString(R.string.save_failed),Toast.LENGTH_SHORT).show();
+                ToastUtils.toast(R.string.save_failed);
             } else {
                 boolean prefixDataFormat = StringUtil.getDataFormat(prefix);
                 boolean suffixDataFormat = StringUtil.getDataFormat(suffix);
@@ -50,9 +51,9 @@ public class SettingActivity extends BaseActivity {
                     MMkvUtil.getInstance().EncodeStringValue(MMkvUtil.PREFIX, MMkvUtil.KEY_PREFIX, prefix);
                     MMkvUtil.getInstance().EncodeStringValue(MMkvUtil.SUFFIX, MMkvUtil.KEY_SUFFIX, suffix);
                     MMkvUtil.getInstance().EncodeStringValue(MMkvUtil.CONTENT, MMkvUtil.KEY_CONTENT, content);
-                    Toast.makeText(this,getString(R.string.save_success),Toast.LENGTH_SHORT).show();
+                    ToastUtils.toast(R.string.save_success);
                 } else {
-                    Toast.makeText(this,getString(R.string.save_failed_format),Toast.LENGTH_SHORT).show();
+                    ToastUtils.toast(R.string.save_failed_format);
                 }
             }
         });

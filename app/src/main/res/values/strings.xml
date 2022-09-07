@@ -26,4 +26,5 @@
     第三步：在当前目录查看导出文件</string>
     <string name="core_question">核心问法</string>
     <string name="copy_success">复制成功</string>
+    <string name="home_exit_hint">再按一次退出</string>
 </resources>
