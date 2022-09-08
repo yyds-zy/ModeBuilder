@@ -61,7 +61,7 @@
 
 #### 五、导出模型数据
 
-- 方案一：在手机的文件管理中选择我的手机 →  Android  →  data → com.tencent.mobuilder → files → ModeFile 将此文件夹下所有文件拷贝出来即可
+- 方案一：在手机的文件管理中选择我的手机 →  Android  →  data → com.tencent.modebuilder → files → ModeFile 将此文件夹下所有文件拷贝出来即可
 
 - 方案二：电脑连接手机通过adb工具执行adb pull /storage/emulated/0/Android/data/com.tencent.modebuilder/files/ModeFile/
 
