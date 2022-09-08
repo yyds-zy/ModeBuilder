@@ -54,7 +54,7 @@ android {
         variant.outputs.each { output ->
             //将版本号和apk名拼接，最后拼接出的格式是xw-release-arm64-v8a-1.0.0.0.apk
             def abi = output.getFilter("ABI")
-            def baseAbiVersionCode = project.ext.abiCodes.get(abi)
+            def baseAbiVersionCode = config.abiCodes.get(abi)
             if (baseAbiVersionCode != null) {
                 output.versionCodeOverride = baseAbiVersionCode + variant.versionCode
             }
