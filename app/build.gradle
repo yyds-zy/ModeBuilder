@@ -3,6 +3,20 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('D:\\code_sapce\\ModeBuilder\\app\\ModeBuilder.jks')
+            storePassword 'ModeBuilder'
+            keyAlias 'ModeBuilder'
+            keyPassword 'ModeBuilder'
+        }
+        release {
+            storeFile file('D:\\code_sapce\\ModeBuilder\\app\\ModeBuilder.jks')
+            storePassword 'ModeBuilder'
+            keyAlias 'ModeBuilder'
+            keyPassword 'ModeBuilder'
+        }
+    }
     compileSdk config.android.compileSdk
 
     defaultConfig {
@@ -13,24 +27,49 @@ android {
         versionName config.version.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
     }
 
     buildTypes {
         release {
             minifyEnabled config.android.multiDexEnabled
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            android.applicationVariants.all { variant ->
-                variant.outputs.all {
-                    outputFileName = "ModeBuilder.apk"
-                }
-            }
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
         }
     }
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include "armeabi-v7a", "arm64-v8a"
+            universalApk false
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            //将版本号和apk名拼接，最后拼接出的格式是xw-release-arm64-v8a-1.0.0.0.apk
+            def abi = output.getFilter("ABI")
+            def baseAbiVersionCode = project.ext.abiCodes.get(abi)
+            if (baseAbiVersionCode != null) {
+                output.versionCodeOverride = baseAbiVersionCode + variant.versionCode
+            }
+            def appName = 'ModeBuilder'
+            output.outputFileName = appName + '-' + variant.buildType.name + '-' + abi + '-' + variant.versionName + '.apk'
+        }
+    }
+
     compileOptions {
         sourceCompatibility config.android.sourceCompatibility
         targetCompatibility config.android.targetCompatibility
     }
 }
+
+ext.abiCodes = ['armeabi-v7a':0, "arm64-v8a":0]
 
 dependencies {
 
